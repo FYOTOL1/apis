@@ -36,12 +36,7 @@ class Requests
                     $cmd->bindParam(':email', $d["email"]);
                     $cmd->bindParam(':password', $d["password"]);
                     $cmd->execute();
-
-                    if ($cmd->execute()) {
-                        echo json_encode(["message" => "تم إدراج المستخدم بنجاح"]);
-                    } else {
-                        echo json_encode(["message" => "فشل في إدراج المستخدم"]);
-                    }
+                    echo json_encode(["message" => "تم إدراج المستخدم بنجاح"]);
                 } else {
                     echo json_encode(["message" => "No Data Found", "data" => $d]);
                 }
